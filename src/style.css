@@ -1,0 +1,157 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-image: linear-gradient(
+    140deg,
+    rgb(189, 227, 236),
+    rgb(54, 54, 84)
+  );
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  height: fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  background: rgba(0, 0, 0);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.55);
+  border-radius: 0.8rem;
+  z-index: 1;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+  padding: 8px;
+}
+
+.yellow {
+  background-color: #ffbd44;
+  padding: 8px;
+}
+
+.green {
+  background-color: #00ca4e;
+  padding: 8px;
+}
+
+.calculator-grid {
+  display: grid;
+  margin-top: 1.5rem;
+  grid-template-columns: repeat(4, 5.4rem);
+  justify-content: center;
+  grid-template-rows: minmax(7rem, auto) repeat(5, 5rem);
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.btn-yellow {
+  color: white;
+  background-color: #ff9500;
+}
+.btn-yellow:hover {
+  background-color: #ffa424;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-grey {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.btn-grey:hover {
+  background-color: rgba(39, 39, 39, 0.9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-lightgrey {
+  background-color: #d4d4d2;
+}
+.btn-lightgrey:hover {
+  background-color: #bebebe;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1/-1;
+  margin-top: -12%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-radius: 0.5rem;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: repeat(3, 5rem);
+    grid-template-rows: minmax(7rem, auto) repeat(6, 5rem);
+  }
+
+  .span-two {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 500px) {
+  .calculator-grid {
+    grid-template-columns: repeat(2, 5rem);
+    grid-template-rows: minmax(7rem, auto) repeat(7, 5rem);
+  }
+
+  .span-two {
+    grid-column: span 2;
+  }
+
+  .output {
+    font-size: 1.5rem;
+  }
+}
